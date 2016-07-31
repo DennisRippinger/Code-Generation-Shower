@@ -47,10 +47,10 @@
 	<section class="slide">
 		<h2>Source Code Generation?</h2>
 		<ul>
-			<li>You've seen this before</li>
-			<li class="next">generate Getter/Setter</li>
-			<li class="next">Code Wizards</li>
-			<li class="next">UI Builder</li>
+			<li>You've seen this before &hellip;</li>
+			<li class="next">&hellip; generate Getter/Setter</li>
+			<li class="next">&hellip; Code Wizards</li>
+			<li class="next">&hellip; UI Builder</li>
 		</ul>
 	</section>
 
@@ -64,6 +64,31 @@
 		</code></pre></div>
 		<p class="note"><a href="http://joel-costigliola.github.io/assertj/assertj-assertions-generator.html">AssertJs Related Documentation</a></p>
 	</section>
+
+	<section class="slide">
+		<h2>Example: jOOQ's Code Generator</h2>
+		<p>Given: A database with a schema containing a table <code>JOB_OFFER</code>.</p>
+<div class="highlight"><pre><code><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">JobOffer</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">(</span><span class="n">Long</span> <span class="n">companyID</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">jooq</span><span class="o">.</span><span class="na">select</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">JOB_OFFER</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">JOB_OFFER</span><span class="o">.</span><span class="na">COMPANY_ID</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">companyID</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">fetchInto</span><span class="o">(</span><span class="n">JobOffer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="o">}</span></code></pre></div>
+		<p class="note"><a href="http://www.jooq.org/doc/3.4/manual/code-generation/">jOOQ's Related Documentation</a></p>
+	</section>
+
+	<section class="slide">
+		<h2>Example: Immutables</h2>
+		<div class="highlight"><pre>
+		<code><span class="nd">@Value.Immutable</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ValueObject</span> <span class="o">{</span>
+  <span class="n">String</span> <span class="nf">getName</span><span class="o">();</span>
+  <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getTags</span><span class="o">();</span>
+  <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getDescription</span><span class="o">();</span>
+<span class="o">}</span></code></pre></div>
+		<p class="note"><a href="http://immutables.github.io/">Immutables Documentation</a></p>
+	</section>
+
 
 	<section class="slide">
 		<h2>All kind of lists</h2>
