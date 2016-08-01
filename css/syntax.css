@@ -1,3 +1,47 @@
+@font-face{
+    font-family: 'Fira Code';
+    src: url('css/eot/FiraCode-Light.eot');
+    src: url('css/eot/FiraCode-Light.eot') format('embedded-opentype'),
+         url('css/woff2/FiraCode-Light.woff2') format('woff2'),
+         url('css/woff/FiraCode-Light.woff') format('woff'),
+         url('css/ttf/FiraCode-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Code';
+    src: url('css/eot/FiraCode-Regular.eot');
+    src: url('css/eot/FiraCode-Regular.eot') format('embedded-opentype'),
+         url('css/woff2/FiraCode-Regular.woff2') format('woff2'),
+         url('css/woff/FiraCode-Regular.woff') format('woff'),
+         url('css/ttf/FiraCode-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Code';
+    src: url('css/eot/FiraCode-Medium.eot');
+    src: url('css/eot/FiraCode-Medium.eot') format('embedded-opentype'),
+         url('css/woff2/FiraCode-Medium.woff2') format('woff2'),
+         url('css/woff/FiraCode-Medium.woff') format('woff'),
+         url('css/ttf/FiraCode-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Code';
+    src: url('css/eot/FiraCode-Bold.eot');
+    src: url('css/eot/FiraCode-Bold.eot') format('embedded-opentype'),
+         url('css/woff2/FiraCode-Bold.woff2') format('woff2'),
+         url('css/woff/FiraCode-Bold.woff') format('woff'),
+         url('css/ttf/FiraCode-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 /* to make lines scroll instead of wrap */
 /* from http://stackoverflow.com/a/23393920 */
 
@@ -7,6 +51,9 @@
 
 .highlight pre code * {
   white-space: nowrap;    /* this sets all children inside to nowrap */
+  font-family: 'Fira Code';
+  font-variant-ligatures: contextual;
+  text-rendering: optimizeLegibility;
 }
 
 .highlight pre {
