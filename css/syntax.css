@@ -51,9 +51,12 @@
 
 .highlight pre code * {
   white-space: nowrap;    /* this sets all children inside to nowrap */
-  font-family: 'Fira Code';
   font-variant-ligatures: contextual;
   text-rendering: optimizeLegibility;
+}
+
+code{
+  font-family: 'Fira Code' !important;
 }
 
 .highlight pre {
