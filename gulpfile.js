@@ -16,6 +16,7 @@ gulp.task('prepare', () => {
 
 	const shower = gulp.src([
 			'**',
+			'!.editorconfig',
 			'!node_modules{,/**}',
 			'!prepared{,/**}',
 			'!CONTRIBUTING.md',
