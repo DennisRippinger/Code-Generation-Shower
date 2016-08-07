@@ -1,7 +1,8 @@
-<div class="highlight"><pre><span class="nd">@Value.Immutable</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ValueObject</span> <span class="o">{</span>
-  <span class="kd">abstract</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">();</span>
-  <span class="kd">abstract</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getTags</span><span class="o">();</span>
-  <span class="kd">abstract</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getDescription</span><span class="o">();</span>
+<div class="highlight"><pre><span class="nd">@Data</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataExample</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">double</span> <span class="n">score</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">tags</span><span class="o">;</span>
 <span class="o">}</span>
 </pre></div>

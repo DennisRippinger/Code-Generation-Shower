@@ -1,6 +1,7 @@
-@Value.Immutable
-public interface ValueObject {
-  abstract String getName();
-  abstract Set<String> getTags();
-  abstract Optional<String> getDescription();
+@Data
+public class DataExample {
+  private final String name;
+  private int age;
+  private double score;
+  private String[] tags;
 }

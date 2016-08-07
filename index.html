@@ -7,6 +7,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/syntax.css">
+	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
 </head>
 
@@ -58,163 +59,74 @@
 		<h2>Example: AssertJ Assertions Generator</h2>
 		<p>Given: A POJO with name, team and a list of teamMates.</p>
 		<div class="highlight">
-			<pre><code><span class="n">assertThat</span><span class="o">(</span><span class="n">mj</span><span class="o">).</span><span class="na">hasName</span><span class="o">(</span><span class="s">&quot;Michael Jordan&quot;</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">hasTeam</span><span class="o">(</span><span class="s">&quot;Chicago Bulls&quot;</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">hasTeamMates</span><span class="o">(</span><span class="s">&quot;Scottie Pippen&quot;</span><span class="o">,</span> <span class="s">&quot;Tony Kukoc&quot;</span><span class="o">);</span>
-		</code></pre></div>
+			<pre>
+<code><span class="n">assertThat</span><span class="o">(</span><span class="n">mj</span><span class="o">).</span><span class="na">hasName</span><span class="o">(</span><span class="s">&quot;Michael Jordan&quot;</span><span class="o">)</span></code>
+<code>        <span class="o">.</span><span class="na">hasTeam</span><span class="o">(</span><span class="s">&quot;Chicago Bulls&quot;</span><span class="o">)</span></code>
+<code>        <span class="o">.</span><span class="na">hasTeamMates</span><span class="o">(</span><span class="s">&quot;Scottie Pippen&quot;</span><span class="o">,</span> <span class="s">&quot;Tony Kukoc&quot;</span><span class="o">);</span></code>
+</pre></div>
 		<p class="note"><a href="http://joel-costigliola.github.io/assertj/assertj-assertions-generator.html">AssertJs Related Documentation</a></p>
 	</section>
 
 	<section class="slide">
 		<h2>Example: jOOQ's Code Generator</h2>
 		<p>Given: A database with a schema containing a table <code>JOB_OFFER</code>.</p>
-<div class="highlight"><pre><code><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">JobOffer</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">(</span><span class="n">Long</span> <span class="n">companyID</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">return</span> <span class="n">jooq</span><span class="o">.</span><span class="na">select</span><span class="o">()</span>
-    <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">JOB_OFFER</span><span class="o">)</span>
-    <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">JOB_OFFER</span><span class="o">.</span><span class="na">COMPANY_ID</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">companyID</span><span class="o">))</span>
-    <span class="o">.</span><span class="na">fetchInto</span><span class="o">(</span><span class="n">JobOffer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-<span class="o">}</span></code></pre></div>
+		<div class="highlight">
+			<pre>
+<code><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">JobOffer</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">(</span><span class="n">Long</span> <span class="n">companyID</span><span class="o">)</span> <span class="o">{</span></code>
+<code>	<span class="k">return</span> <span class="n">jooq</span><span class="o">.</span><span class="na">select</span><span class="o">()</span></code>
+<code>		<span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">JOB_OFFER</span><span class="o">)</span></code>
+<code>    	<span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">JOB_OFFER</span><span class="o">.</span><span class="na">COMPANY_ID</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">companyID</span><span class="o">))</span></code>
+<code>    	<span class="o">.</span><span class="na">fetchInto</span><span class="o">(</span><span class="n">JobOffer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></code>
+<code><span class="o">}</span></code>
+</pre>
+		</div>
 		<p class="note"><a href="http://www.jooq.org/doc/3.4/manual/code-generation/">jOOQ's Related Documentation</a></p>
 	</section>
 
 	<section class="slide">
-		<h2>Example: Immutables</h2>
-		<div class="highlight"><pre>
-		<code><span class="nd">@Value.Immutable</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ValueObject</span> <span class="o">{</span>
-  <span class="n">String</span> <span class="nf">getName</span><span class="o">();</span>
-  <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getTags</span><span class="o">();</span>
-  <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getDescription</span><span class="o">();</span>
-<span class="o">}</span></code></pre></div>
+		<h2>Example: Immutables (Annotation Processing)</h2>
+		<p>Creates an immutable Implementation</p>
+		<div class="highlight">
+			<pre>
+<code><span class="nd">@Value.Immutable</span></code>
+<code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ValueObject</span> <span class="o">{</span></code>
+<code>  <span class="n">String</span> <span class="nf">getName</span><span class="o">();</span></code>
+<code>  <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getTags</span><span class="o">();</span></code>
+<code>  <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getDescription</span><span class="o">();</span></code>
+<code><span class="o">}</span></code>
+</pre>
+		</div>
 		<p class="note"><a href="http://immutables.github.io/">Immutables Documentation</a></p>
 	</section>
 
+	<section class="slide">
+		<h2>Example: Lombok (AST manipulation)</h2>
+		<p>Addes Getter, Setter (et al.) to compiled class file</p>
+		<div class="highlight">
+			<pre>
+<code><span class="nd">@Data</span></code>
+<code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataExample</span> <span class="o">{</span></code>
+<code>  <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span></code>
+<code>  <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span></code>
+<code>  <span class="kd">private</span> <span class="kt">double</span> <span class="n">score</span><span class="o">;</span></code>
+<code><span class="o">}</span></code>
+</pre>
+		</div>
+		<p class="note"><a href="https://projectlombok.org/">Lombok Documentation</a></p>
+	</section>
 
 	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
+		<h2>Types of Source Code Generation</h2>
+		<ul>
+			<li>Before compile time, e.g. via build tools</li>
+			<li>At compile time, via annotation processing</li>
+			<li>At compile time, via AST manipulation <span class="label label-info">Not in this talk</span></li>
+			<li>At Runtime, via ASM (<a href="http://bytebuddy.net/#/">ByteBuddy</a>) <span class="label label-info">Not in this talk</span></li>
+		</ul>
 	</section>
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-					dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</section>
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-			<tr>
-				<th scope="col">Locavore</th>
-				<th>Umami</th>
-				<th>Helvetica</th>
-				<th>Vegan</th>
-			</tr>
-			<tr>
-				<th scope="row">Fingerstache</th>
-				<td>Kale</td>
-				<td>Chips</td>
-				<td>Keytar</td>
-			</tr>
-			<tr>
-				<th scope="row">Sriracha</th>
-				<td>Gluten-free</td>
-				<td>Ennui</td>
-				<td>Keffiyeh</td>
-			</tr>
-			<tr>
-				<th scope="row">Thundercats</th>
-				<td>Jean</td>
-				<td>Shorts</td>
-				<td>Biodiesel</td>
-			</tr>
-			<tr>
-				<th scope="row">Terry</th>
-				<td>Richardson</td>
-				<td>Swag</td>
-				<td>Blog</td>
-			</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color: #FFF;
-			}
-		</style>
-	</section>
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
-	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size: 100px
-			}
 
-			#see-more img {
-				width: 0.72em;
-				height: 0.72em;
-			}
-		</style>
-	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
 	<div class="progress"></div>
 	<script src="shower/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 
 </html>
